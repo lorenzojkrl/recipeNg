@@ -17,6 +17,11 @@ export class ShoppingListService {
   addIngredient(ingredient: Ingredient) {
     this.ingredients.push(ingredient);
     this.ingredientsChange.emit(this.ingredients.slice()); // return new array + change
-    console.log(ingredient);
+  }
+
+  addIngredients(ingredients: Ingredient[]) {
+    this.ingredients.push(...ingredients); // add all ingredients, then emit 1 single event.
+    //Spread operator turns array of elements into a list which are then pushed
+    this.ingredientsChange.emit(this.ingredients.slice()); // return new array + change
   }
 }
