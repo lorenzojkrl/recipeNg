@@ -9,8 +9,4 @@ export class AppComponent {
   loadedRouting = 'recipes';
 
   title = 'recipeNg';
-
-  onNavigate(selectedRoute: string) {
-    this.loadedRouting = selectedRoute;
-  }
 }
