@@ -1,5 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-// import { EventEmitter } from 'stream';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,15 +6,9 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  @Output() selectedRoute = new EventEmitter<string>();
-
   collapsed = true;
 
   constructor() {}
 
   ngOnInit(): void {}
-
-  onSelectRoute(selectedRoute: string) {
-    this.selectedRoute.emit(selectedRoute);
-  }
 }
