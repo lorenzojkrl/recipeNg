@@ -10,7 +10,7 @@
       </button>
       <a
         routerLink="/"
-        routerLinkActive="router-link-active"
+        routerLinkActive="active"
         routerLinkActiveOptions="{exact: true}"
         class="navbar-brand"
         >Recipe Book</a
@@ -23,26 +23,22 @@
     >
       <ul class="nav navbar-nav">
         <li>
-          <a [routerLink]="['/recipes']" routerLinkActive="router-link-active"
-            >Recipes</a
-          >
+          <a [routerLink]="['/recipes']" routerLinkActive="active">Recipes</a>
         </li>
         <li>
-          <a
-            [routerLink]="['/shopping-list']"
-            routerLinkActive="router-link-active"
+          <a [routerLink]="['/shopping-list']" routerLinkActive="active"
             >Shopping</a
           >
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown" appDropdown>
-          <a href="#" role="button" class="dropdown-toggle"
+          <a style="cursor: pointer" role="button" class="dropdown-toggle"
             >Manage <span class="caret"></span
           ></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Save Data</a></li>
-            <li><a href="#">Fetch Data</a></li>
+            <li><a style="cursor: pointer">Save Data</a></li>
+            <li><a style="cursor: pointer">Fetch Data</a></li>
           </ul>
         </li>
       </ul>
