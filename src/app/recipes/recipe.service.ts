@@ -48,6 +48,10 @@ export class RecipeService {
     return this.recipes.slice(); // .slice() with no arguments returns a copy of the array
   }
 
+  getRecipe(index: number) {
+    return this.recipes[index];
+  }
+
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
     this.slService.addIngredients(ingredients);
   }
