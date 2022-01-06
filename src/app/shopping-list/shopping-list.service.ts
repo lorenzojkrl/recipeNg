@@ -1,6 +1,8 @@
-import { Subject } from 'rxjs';
+import { Injectable } from '@angular/core';
 import { Ingredient } from '../shared/ingredient.model';
+import { Subject } from 'rxjs';
 
+@Injectable({ providedIn: 'root' })
 export class ShoppingListService {
   ingredientsChange = new Subject<Ingredient[]>(); // inform other Comp that ingredients changed
 
@@ -15,8 +17,7 @@ export class ShoppingListService {
 
   addIngredient(ingredient: Ingredient) {
     this.ingredients.push(ingredient);
-    // this.ingredientsChange.emit(this.ingredients.slice()); // return new array + change
-    this.ingredientsChange.next(this.ingredients.slice());
+    this.ingredientsChange.next(this.ingredients.slice()); // return new array + change
   }
 
   addIngredients(ingredients: Ingredient[]) {
