@@ -30,4 +30,9 @@ export class ShoppingListService {
     //Spread operator turns array of elements into a list which are then pushed
     this.ingredientsChange.next(this.ingredients.slice()); // return new array + change
   }
+
+  updateIngredient(index: number, newIngredient: Ingredient) {
+    this.ingredients[index] = newIngredient;
+    this.ingredientsChange.next(this.ingredients.slice());
+  }
 }
