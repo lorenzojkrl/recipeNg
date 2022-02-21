@@ -41,7 +41,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
     });
   }
 
-  onAddItem(f: NgForm) {
+  onSubmit(f: NgForm) {
     // Not using local ref
     // const ingredientName = this.nameInputReference.nativeElement.value;
     // const ingredientAmount = this.amountInputReference.nativeElement.value;
@@ -55,6 +55,18 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
     } else {
       this.shoppingListService.addIngredient(newIngredient);
     }
+    this.editMode = false;
+    f.reset();
+  }
+
+  onClear() {
+    this.slForm.reset();
+    this.editMode = false;
+  }
+
+  onDelete() {
+    this.shoppingListService.deleteIngredient(this.editedItemIndex);
+    this.onClear();
   }
 
   ngOnDestroy(): void {
